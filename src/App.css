@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background for the body */
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: white;
+  color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Make the navbar sticky */
+  top: 0;
+  z-index: 10; /* Ensure navbar stays on top */
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px; /* Add space between logo and links */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Horizontal layout for links by default */
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease; /* Add smooth color transition on hover */
+}
+
+.nav-links a:hover {
+  color: #007bff; /* Change link color on hover */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.currency {
+  margin-right: 20px;
+}
+
+.signin-btn {
+  background-color: transparent;
+  color: #007bff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease; /* Add smooth background transition on hover */
+}
+
+.signin-btn:hover {
+  background-color: #007bff; /* Change button background on hover */
+  color: white;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Vertical on mobile */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0); 
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: scaleY(1);
+  }
+
+  .nav-links a {
+    padding: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
